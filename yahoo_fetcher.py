@@ -20,7 +20,8 @@ for ticket in tickets:
 # Write results to file with head csv_columns
 csv_columns = ['SELSKAP','CLOSE','MARKETCAP'] # Header
 with open('selskaper.csv', 'w') as csvfile: # Open file
-    writer = csv.writer(csvfile, delimiter='|') # Write to file with delimiter '|' (pipe)
+    writer = csv.writer(csvfile, delimiter=',') # Write to file with delimiter '|' (pipe)
+    writer.writerow(csv_columns)
     # Loop over tickets in tickets_array and write row to file
     for ticket_info in tickets_array: 
             writer.writerow(ticket_info)
